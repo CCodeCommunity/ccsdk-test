@@ -1,0 +1,20 @@
+{
+  "name": "ccsdk-test",
+  "version": "1.0.0",
+  "description": "ccsdk-test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CCodeCommunity/ccsdk-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CCodeCommunity/ccsdk-test/issues"
+  },
+  "homepage": "https://github.com/CCodeCommunity/ccsdk-test#readme"
+}
