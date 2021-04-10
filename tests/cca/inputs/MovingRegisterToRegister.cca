@@ -1,0 +1,8 @@
+; do the operation
+mov c, 666
+mov d, c
+
+; print it to the console to confirm
+mov a, 3
+syscall
+stp
