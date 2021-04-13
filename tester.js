@@ -37,7 +37,7 @@ const performTests = testNames => {
     });
 };
 
-const performTestCCA = testName => {
+const performTestCCA = async testName => {
     // compile
     execSync(`cca ./tests/cca/inputs/${testName} -o ./tests/cca/output.ccb`);
 
@@ -48,10 +48,15 @@ const performTestCCA = testName => {
     // read the compiled data and the expected data
     const compiledData = fs.readFileSync(`./tests/cca/output.ccb`);
     const expectedData = fs.readFileSync(`./tests/cca/outputs/${ccbName}.ccb`);
-    // console.log(compiledData, expectedData);
-
+    
+    // test if the test failed or not
     let failed = false;
+    if (compiledData.length !== expectedData.length)
+        failed = true;
+    else
+        failed = compiledData.find((byte, index) => byte !== expectedData[index]);
 
+    // display results
     if (failed) {
         ++failCount;
         console.log(` 🔴  test failed │ ${testDescription}`);
